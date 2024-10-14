@@ -1,21 +1,26 @@
 import React from 'react';
-import { Building2, Hammer, PenTool } from 'lucide-react';
+import { Building2, Hammer, PenTool, Truck } from 'lucide-react';
 
 const services = [
   {
-    name: 'Nybyggnation',
-    description: 'Vi hjälper dig med alla typer av nybyggnationer, från grund till tak.',
+    name: 'Residential Construction',
+    description: 'Build your dream home with our expert residential construction services.',
     icon: Building2,
   },
   {
-    name: 'Tillbyggnation',
-    description: 'Utöka ditt hem eller företag med våra experttjänster inom tillbyggnation.',
+    name: 'Commercial Projects',
+    description: 'From office buildings to retail spaces, we handle all types of commercial construction.',
     icon: Hammer,
   },
   {
-    name: 'Renovering',
-    description: 'Fräscha upp ditt utrymme med våra omfattande renoveringstjänster.',
+    name: 'Renovation & Remodeling',
+    description: 'Transform your existing space with our renovation and remodeling expertise.',
     icon: PenTool,
+  },
+  {
+    name: 'Infrastructure Development',
+    description: 'We contribute to community growth through large-scale infrastructure projects.',
+    icon: Truck,
   },
 ];
 
@@ -24,17 +29,17 @@ const Services = () => {
     <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Tjänster</h2>
+          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Services</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Våra Byggtjänster
+            Comprehensive Construction Solutions
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Vi utför allt inom bygg och renovering, inklusive husbyggnationer, ROT-jobb, takbyten, bryggor, altanbyggen, soldäck, trappor och uteplatser m.m. som totalentreprenör.
+            From residential to commercial, renovation to infrastructure, we offer a wide range of construction services tailored to your needs.
           </p>
         </div>
 
         <div className="mt-10">
-          <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+          <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {services.map((service) => (
               <div key={service.name} className="relative">
                 <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
