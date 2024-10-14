@@ -70,8 +70,12 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom styles */
+.bg-gradient {
+  background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
 }
