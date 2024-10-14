@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ExpandableMenu from './ExpandableMenu';
+import ProjectsMenu from './ProjectsMenu';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
+  const [isProjectsMenuOpen, setIsProjectsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleServicesMenu = () => {
+    setIsServicesMenuOpen(!isServicesMenuOpen);
+    setIsProjectsMenuOpen(false);
+  };
+
+  const toggleProjectsMenu = () => {
+    setIsProjectsMenuOpen(!isProjectsMenuOpen);
+    setIsServicesMenuOpen(false);
   };
 
   return (
@@ -20,15 +28,12 @@ const Header = () => {
             </Link>
           </div>
           <nav className="hidden md:flex space-x-10">
-            <button onClick={toggleMenu} className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <button onClick={toggleServicesMenu} className="text-base font-medium text-gray-500 hover:text-gray-900">
               Services
             </button>
-            <Link to="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
-              About
-            </Link>
-            <a href="#projects" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <button onClick={toggleProjectsMenu} className="text-base font-medium text-gray-500 hover:text-gray-900">
               Projects
-            </a>
+            </button>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <Button variant="default" className="ml-8 whitespace-nowrap">
@@ -37,7 +42,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {isMenuOpen && <ExpandableMenu onClose={toggleMenu} />}
+      {isServicesMenuOpen && <ExpandableMenu onClose={toggleServicesMenu} />}
+      {isProjectsMenuOpen && <ProjectsMenu onClose={toggleProjectsMenu} />}
     </header>
   );
 };
