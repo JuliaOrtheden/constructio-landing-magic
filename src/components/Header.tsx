@@ -18,6 +18,12 @@ const Header = () => {
     setIsServicesMenuOpen(false);
   };
 
+  const handleContactClick = () => {
+    const subject = encodeURIComponent("Interested in a project");
+    const body = encodeURIComponent("Hello Julia,\n\nI am very interested of X and would like a price list.\n\nBest regards,\nJulia");
+    window.location.href = `mailto:j.ortheden@hotmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <header className="bg-white shadow-sm relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,8 +42,8 @@ const Header = () => {
             </button>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button variant="default" className="ml-8 whitespace-nowrap">
-              Get a Quote
+            <Button variant="default" className="ml-8 whitespace-nowrap" onClick={handleContactClick}>
+              Contact Us
             </Button>
           </div>
         </div>
